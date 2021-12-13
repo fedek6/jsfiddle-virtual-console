@@ -9,3 +9,7 @@ Simply add it as an asset in your fiddle:
 * https://realhe.ro/cdn/console.min.js
 
 It will display a virtual console in your HTML window.
+
+## Preview
+
+![screenshot](screenshot.png "Virtual console screenshot")
