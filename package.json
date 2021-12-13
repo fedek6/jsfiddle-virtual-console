@@ -1,0 +1,23 @@
+{
+  "name": "virtual-console-jsfiddle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "console.js",
+  "scripts": {
+    "uglify": "uglifyjs console.js -o console.min.js -c -m",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedek6/jsfiddle-virtual-console.git"
+  },
+  "author": "Konrad Fedorczyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fedek6/jsfiddle-virtual-console/issues"
+  },
+  "homepage": "https://github.com/fedek6/jsfiddle-virtual-console#readme",
+  "dependencies": {
+    "uglify-js": "^3.14.5"
+  }
+}
