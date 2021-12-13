@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+    - production
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: "14"
+
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run uglify
+
+      - name: 📂 Sync files
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_dir: "./dist"
+          delete: "false"
+          remote_dir: "./domains/realhe.ro/public_html/cdn"
+          ftp_ssl_allow: "false"
+          max_retries: "2"
+          ftp_use_feat: "true"
